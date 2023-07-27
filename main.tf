@@ -3,12 +3,12 @@ provider "aws" {
 }
 
 
-variable subnet_cidr_block {}
-variable vpc_cidr_block {} 
-variable avail_zone {}
-variable env_prefix {}
-variable my_ip {}
-variable instance_type {}
+# variable subnet_cidr_block {}
+# variable vpc_cidr_block {} 
+# variable avail_zone {}
+# variable env_prefix {}
+# variable my_ip {}
+# variable instance_type {}
 
 resource "aws_vpc" "myapp-vpc" {
     cidr_block = var.vpc_cidr_block
@@ -125,18 +125,18 @@ resource "aws_default_security_group" "default-sg" {
     }
 }
  
-data "aws_ami" "latest-amazon-linux-image" {
-    most_recent = true
-    owners = ["amazon"]
-    filter {
-        name = "name"
-        values = ["amzn2-ami-hvm-*-x86_64-gp2"]
-    }
-    filter {
-        name = "virtualization-type"
-        values = ["hvm"]
-    }
-}
+# data "aws_ami" "latest-amazon-linux-image" {
+#     most_recent = true
+#     owners = ["amazon"]
+#     filter {
+#         name = "name"
+#         values = ["amzn2-ami-hvm-*-x86_64-gp2"]
+#     }
+#     filter {
+#         name = "virtualization-type"
+#         values = ["hvm"]
+#     }
+# }
 
 # resource "aws_key_pair" "ssh-key" {
 #     key_name = "server-key"
